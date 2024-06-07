@@ -1,0 +1,78 @@
+HTML....
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="user.css"/>
+    
+</head>
+<body>
+    <div class="profile-container" id="profileContainer">
+        <div id="imgContainer"></div>
+    </div>
+
+    <script src="user.js"></script>
+    
+    
+</body>
+</html>
+
+>CSS....
+
+.profile-container{
+    color: white;
+    background-color: #b990ff;
+    height: 100vh;
+}
+
+.profile-img{
+    width: 200px;
+    border-radius: 115px;
+}
+
+.profile-name{
+    font-family: Roboto;
+    font-size: 22px;
+    font-weight: 800;
+    margin-top: 20px;
+}
+
+.age{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.JS...
+
+let profileDetails = {
+    imgSrc: "https://www.pngitem.com/pimgs/m/22-220721_circled-user-male-type-user-colorful-icon-png.png",
+    name: "RAHUL ATTLURI",
+    age: 25
+};
+
+let profileContainerEl = document.getElementById("profileContainer");
+profileContainerEl.classList.add("text-center", "d-flex", "flex-column", "justify-content-center");
+
+
+let imgContainerEl = document.getElementById("imgContainer");
+let imgEl =  document.createElement("img");
+imgEl.setAttribute("src", profileDetails.imgSrc);
+imgEl.classList.add("profile-img");
+imgContainerEl.appendChild(imgEl);
+
+let nameEl = document.createElement("h1");
+nameEl.classList.add("profile-name");
+nameEl.textContent  = profileDetails.name;
+profileContainerEl.appendChild(nameEl);
+
+let ageEl = document.createElement("p");
+ageEl.classList.add("age");
+ageEl.textContent = "Age:  "  +  profileDetails.age;
+profileContainerEl.appendChild(ageEl);
+
+
